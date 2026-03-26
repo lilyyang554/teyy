@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: anon-messages
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URL
+        sync: false
