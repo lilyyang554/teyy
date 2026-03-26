@@ -31,26 +31,47 @@ body::before {
   pointer-events: none;
 }
 
+/* Make sure parent is positioned */
+.parent {
+  position: relative;
+}
+
 .gif-wrapper {
   position: absolute;
-  top: 0;
+  top: 22vh; /* default for most screens */
   left: 50%;
-  transform: translate(-50%, -45%);
+  transform: translateX(-50%);
   z-index: 3;
 }
 
 .gif-wrapper img {
-  width: clamp(100px, 15vw, 160px);
+  width: 18vw;       /* responsive scaling */
+  max-width: 160px; /* limit on big screens */
+  min-width: 100px; /* prevent too small on tiny phones */
   height: auto;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 560px;
-  width: 100%;
+/* 📱 Mobile tuning */
+@media (max-width: 768px) {
+  .gif-wrapper {
+    top: 10vh;
+  }
+
+  .gif-wrapper img {
+    width: 28vw;
+  }
 }
 
+/* 💻 Large screens / desktop tuning */
+@media (min-width: 1200px) {
+  .gif-wrapper {
+    top: 0vh;
+  }
+
+  .gif-wrapper img {
+    width: 140px;
+  }
+}
 
 .card {
   border-radius: 12px !important;
