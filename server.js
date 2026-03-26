@@ -18,7 +18,7 @@ if (!ADMIN_PASSWORD || !MONGODB_URL) {
 }
 
 // Connect to MongoDB
-mongoose.connect(MONGODB_URL, { dbName: 'Send2T' })
+mongoose.connect(MONGODB_URL, { dbName: 'data' })
   .then(() => console.log('✅ Connected to MongoDB'))
   .catch(err => {
     console.error('❌ MongoDB connection error:', err);
