@@ -54,11 +54,11 @@ body::before {
 /* 📱 Mobile tuning */
 @media (max-width: 768px) {
   .gif-wrapper {
-    top: 10vh;
+    top: 12vh;
   }
 
   .gif-wrapper img {
-    width: 28vw;
+    width: 30vw;
   }
 }
 
@@ -69,7 +69,7 @@ body::before {
   }
 
   .gif-wrapper img {
-    width: 140px;
+    width: 200px;
   }
 }
 
